@@ -4,13 +4,13 @@ angular.module('course')
 	
 	 var courses = [{
 		id : 1,
-		name : 'Real Estate Concepts 1',
+		name : 'Real Estate Concepts: Part 1',
 		nextStepNo : 1,
 		progress : 0,
 		dateStarted : '06/18/2017'
 	}, {
 		id : 2,
-		name : 'Real Estate Concepts 2',
+		name : 'Real Estate Concepts: Part 2',
 		nextStepNo : 1,
 		progress : 0,
 		dateStarted : '06/18/2017'
