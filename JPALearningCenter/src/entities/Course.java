@@ -24,11 +24,48 @@ public class Course {
 	
 	// mappings
 	@OneToMany(mappedBy = "course")
-	@JsonManagedReference(value = "course-course-progress")
-	private Set<CourseProgress> courseProgresses;
+	@JsonManagedReference(value = "course-course-enrollment")
+	private Set<CourseEnrollment> courseEnrollment;
 	
 	@OneToMany(mappedBy = "course")
 	@JsonManagedReference(value = "course-step")
 	private Set<Step> steps;
+
+	// sets and gets
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Set<CourseEnrollment> getCourseEnrollment() {
+		return courseEnrollment;
+	}
+
+	public void setCourseEnrollment(Set<CourseEnrollment> courseEnrollment) {
+		this.courseEnrollment = courseEnrollment;
+	}
+
+	public Set<Step> getSteps() {
+		return steps;
+	}
+
+	public void setSteps(Set<Step> steps) {
+		this.steps = steps;
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	// toString
+	@Override
+	public String toString() {
+		return "Course [Id=" + Id + ", name=" + name + "]";
+	}
+	
+	
 	
 }

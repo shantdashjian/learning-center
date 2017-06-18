@@ -26,7 +26,7 @@ public class User {
 	// mappings
 	@OneToMany(mappedBy = "user")
 	@JsonManagedReference
-	private Set<CourseProgress> courseProgresses;
+	private Set<CourseEnrollment> courseEnrollment;
 
 	// gets and sets
 	public String getEmail() {
@@ -45,12 +45,14 @@ public class User {
 		this.password = password;
 	}
 
-	public Set<CourseProgress> getCourseProgresses() {
-		return courseProgresses;
+	
+
+	public Set<CourseEnrollment> getCourseEnrollment() {
+		return courseEnrollment;
 	}
 
-	public void setCourseProgresses(Set<CourseProgress> courseProgresses) {
-		this.courseProgresses = courseProgresses;
+	public void setCourseEnrollment(Set<CourseEnrollment> courseEnrollment) {
+		this.courseEnrollment = courseEnrollment;
 	}
 
 	public int getId() {
