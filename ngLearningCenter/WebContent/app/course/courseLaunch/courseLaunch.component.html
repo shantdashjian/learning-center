@@ -1,1 +1,24 @@
-<h1>Course launch</h1>
+<div class = "col-md-3 light-background centered">
+ <h4>{{vm.course.name}}</h4>
+ <br>
+ <p>
+ 	<round-progress
+    max="100"
+    current="vm.course.progress"
+    color="#45ccce"
+    bgcolor="#eaeaea"
+    radius="100"
+    stroke="20"
+    semi="true"
+    rounded="true"
+    clockwise="true"
+    responsive="false"
+    duration="800"
+    animation="easeInOutQuart"
+    animation-delay="0"></round-progress>
+ </p>
+ <p>Progress: {{vm.course.progress}}%</p>
+</div>
+<div class = "col-md-8 light-background">
+	<p>Course content</p>
+</div>

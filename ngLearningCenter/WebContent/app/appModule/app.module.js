@@ -1,4 +1,4 @@
-angular.module('appModule', ['course', 'ngRoute'])
+angular.module('appModule', ['course', 'ngRoute', 'angular-svg-round-progressbar'])
 .config(function($routeProvider){
 	$routeProvider	
 	.when('/',{
