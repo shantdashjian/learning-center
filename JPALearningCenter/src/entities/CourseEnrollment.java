@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table(name="course_progress")
+@Table(name="course_enrollment")
 public class CourseEnrollment {
 	// fields
 	@Id

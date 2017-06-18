@@ -7,7 +7,7 @@
 	  
 	    <class>entities.User</class>
 	    <class>entities.Course</class>
-	    <class>entities.CourseProgress</class>
+	    <class>entities.CourseEnrollment</class>
 	    <class>entities.Step</class>
 	   
 	  	<properties>

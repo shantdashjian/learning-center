@@ -129,8 +129,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `learning_center`;
-INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (1, 0, 0, '2017-06-18 00:00:00', 1, 1);
-INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (2, 0, 0, '2017-06-18 00:00:00', 2, 1);
+INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (1, 1, 0, '2017-06-18 00:00:00', 1, 1);
+INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (2, 1, 0, '2017-06-18 00:00:00', 2, 1);
 
 COMMIT;
 
