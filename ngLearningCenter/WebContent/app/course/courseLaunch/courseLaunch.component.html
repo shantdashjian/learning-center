@@ -19,6 +19,33 @@
  </p>
  <p>Progress: {{vm.course.progress}}%</p>
 </div>
-<div class = "col-md-8 light-background">
-	<p>Course content</p>
+<div class = "col-md-8">
+	
+			<div class="panel panel-default">
+				<div class="panel-heading text-center"><strong>{{vm.currentStep.title}}</strong></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class='col-md-5'>
+							<img class='singleicon' src="{{vm.currentStep.imageUrl}}">
+						</div>
+						<div class='col-md-7'>
+							<p>
+								{{vm.currentStep.description}}
+							</p>
+							
+						</div>
+					</div>
+					<!-- <div class="row" id="showitembuttons">
+						<div class='col-md-offset-2 col-md-8 text-center'>
+							<button class="btn btn-default" ng-click="vm.previousItem()">previous</button>
+							<button type="button" class="btn btn-primary"
+								ng-click="vm.editItem()">Edit Item</button>
+							<button type="button" class="btn btn-danger"
+								ng-click="vm.retireItem()">Retire Item</button>
+							<button class="btn btn-default" ng-click="vm.nextItem()">next</button>
+						</div>
+					</div> -->
+				</div>
+			
+	</div>
 </div>
