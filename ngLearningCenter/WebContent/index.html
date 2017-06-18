@@ -4,11 +4,16 @@
 	<title>Learning Center</title>
 	<!-- Vendor scripts -->
 	<script src="js/angular.min.js"></script>
-	<!-- my scripts -->
+	<!-- my main scripts -->
 	<script src="app/appModule/app.module.js"></script>
+	<script src="app/course/course.module.js"></script>
+	<!-- my components -->
+	<script src="app/appModule/appComponent/app.component.js"></script>
+	<script src="app/course/courseList/courseList.component.js"></script>
+	
 	
 </head>
 <body>
-	<h1>{{'Learning Center'}}</h1>
+	<app-component>Loading app component</app-component>
 </body>
 </html>
