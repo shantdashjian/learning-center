@@ -28,23 +28,31 @@
 						<div class='col-md-5'>
 							<img class='singleicon' src="{{vm.currentStep.imageUrl}}">
 						</div>
-						<div class='col-md-7'>
+						<div ng-hide="vm.showQuiz" class='col-md-7'>
 							<p>
 								{{vm.currentStep.description}}
+							</p>							
+						</div>
+						
+						<div ng-show="vm.showQuiz" class='col-md-7'>
+							<h4>True or False?</h4>
+							<p>
+								{{vm.currentStep.question}}
 							</p>
+							<input ng-model="vm.answer" type="radio" name="answer" value="A"> True<br>							
+							<input ng-model="vm.answer" type="radio" name="answer" value="B"> False<br>	
+							<br>
+							<button ng-show="vm.answer" class="btn btn-default" ng-click="vm.submitAnswer()">Submit</button>						
+						</div>
+						
+					</div>
+					<div class="row" id="showitembuttons">
+						<div class='col-md-offset-2 col-md-8 text-center'>
+							<button ng-hide="vm.showQuiz" class="btn btn-default" ng-click="vm.showQuiz = true;">Quiz</button>
 							
+							<button ng-show="vm.answered" class="btn btn-default" ng-click="vm.nextItem()">Next</button>
 						</div>
 					</div>
-					<!-- <div class="row" id="showitembuttons">
-						<div class='col-md-offset-2 col-md-8 text-center'>
-							<button class="btn btn-default" ng-click="vm.previousItem()">previous</button>
-							<button type="button" class="btn btn-primary"
-								ng-click="vm.editItem()">Edit Item</button>
-							<button type="button" class="btn btn-danger"
-								ng-click="vm.retireItem()">Retire Item</button>
-							<button class="btn btn-default" ng-click="vm.nextItem()">next</button>
-						</div>
-					</div> -->
 				</div>
 			
 	</div>

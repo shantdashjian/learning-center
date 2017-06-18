@@ -32,7 +32,18 @@ angular.module('course')
 		
 		vm.currentStep = vm.steps.find(x => x.stepNo == vm.course.nextStepNo);
 		
+		vm.answered = false;
 		
+		vm.showQuiz = false;
+		
+		vm.submitAnswer = function(){
+			if(vm.answer == vm.currentStep.answer){
+				console.log("correct!");
+			} else {
+				console.log("Incorrect!");
+				
+			}
+		}
 
 	},
 	controllerAs : 'vm'
