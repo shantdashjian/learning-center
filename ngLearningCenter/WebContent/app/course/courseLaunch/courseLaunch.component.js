@@ -35,12 +35,13 @@ angular.module('course')
 		vm.answered = false;
 		
 		vm.showQuiz = false;
-		
+		vm.tryAgain = false;
 		vm.submitAnswer = function(){
 			if(vm.answer == vm.currentStep.answer){
-				console.log("correct!");
+				vm.answered = true;
+				vm.tryAgain = false;
 			} else {
-				console.log("Incorrect!");
+				vm.tryAgain = true;
 				
 			}
 		}
