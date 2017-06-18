@@ -1,5 +1,5 @@
 <div class = "col-md-3 light-background centered">
- <h4>{{vm.course.name}}</h4>
+ <h3>{{vm.course.name}}</h3>
  <br>
  <p>
  	<round-progress
@@ -17,11 +17,11 @@
     animation="easeInOutQuart"
     animation-delay="0"></round-progress>
  </p>
- <p>Progress: {{vm.course.progress}}%</p>
+ <p><strong>Progress: {{vm.course.progress | number:0}}%</strong></p>
 </div>
 <div class = "col-md-8">
 	
-			<div class="panel panel-default">
+			<div ng-hide="vm.graduated" class="panel panel-default">
 				<div class="panel-heading text-center"><strong>{{vm.currentStep.title}}</strong></div>
 				<div class="panel-body" style="min-height:300px; max-height: 300px;">
 					<div class="row">
@@ -57,6 +57,25 @@
 						</div>
 					</div>
 				</div>
+				
+				
+			</div>
 			
-	</div>
+			<div ng-show="vm.graduated" class="panel panel-default">
+				<div class="panel-heading text-center">
+					<strong>Congratulations!!</strong>
+				</div>
+				<div class="panel-body" style="min-height:210px; max-height: 210px;">
+					<div class="row">
+						<div class='col-md-5'>
+							<img class='singleicon' src="http://www.desicomments.com/wp-content/uploads/2017/02/Congratulations-Photo-1.jpg">
+						</div>
+						<div class='col-md-7'>
+							<p><strong>Great job! You have completed this course!</strong></p>
+						</div>
+					</div>
+				</div>
+		
+			</div>
+			
 </div>
