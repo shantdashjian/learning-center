@@ -41,11 +41,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `learning_center`.`course_progress`
+-- Table `learning_center`.`course_enrollment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `learning_center`.`course_progress` ;
+DROP TABLE IF EXISTS `learning_center`.`course_enrollment` ;
 
-CREATE TABLE IF NOT EXISTS `learning_center`.`course_progress` (
+CREATE TABLE IF NOT EXISTS `learning_center`.`course_enrollment` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `next_step_no` INT(11) NOT NULL DEFAULT 0,
   `progress` INT(11) NOT NULL DEFAULT 0,
@@ -55,12 +55,12 @@ CREATE TABLE IF NOT EXISTS `learning_center`.`course_progress` (
   PRIMARY KEY (`id`),
   INDEX `fk_course_progress_course_idx` (`course_id` ASC),
   INDEX `fk_course_progress_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_course_progress_course`
+  CONSTRAINT `fk_course_enrollment_course`
     FOREIGN KEY (`course_id`)
     REFERENCES `learning_center`.`course` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_course_progress_user1`
+  CONSTRAINT `fk_course_enrollment_user`
     FOREIGN KEY (`user_id`)
     REFERENCES `learning_center`.`user` (`id`)
     ON DELETE NO ACTION
@@ -125,12 +125,12 @@ COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `learning_center`.`course_progress`
+-- Data for table `learning_center`.`course_enrollment`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `learning_center`;
-INSERT INTO `learning_center`.`course_progress` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (1, 0, 0, '2017-06-18 00:00:00', 1, 1);
-INSERT INTO `learning_center`.`course_progress` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (2, 0, 0, '2017-06-18 00:00:00', 2, 1);
+INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (1, 0, 0, '2017-06-18 00:00:00', 1, 1);
+INSERT INTO `learning_center`.`course_enrollment` (`id`, `next_step_no`, `progress`, `date_started`, `course_id`, `user_id`) VALUES (2, 0, 0, '2017-06-18 00:00:00', 2, 1);
 
 COMMIT;
 
