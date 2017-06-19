@@ -43,7 +43,7 @@ public class EnrollmentControllerImpl implements EnrollmentControllerI {
 
 	//  POST /user/{uid}/courseEnrollment/{cid}
 	@Override
-	@RequestMapping(path = "user/{uid}/courseEnrollment", method = RequestMethod.POST)
+	@RequestMapping(path = "user/{uid}/courseEnrollment/{cid}", method = RequestMethod.POST)
 	public CourseEnrollment create(HttpServletRequest req, HttpServletResponse res, @PathVariable int uid, @PathVariable int cid,
 			@RequestBody String courseEnrollmentJson) {
 		return courseEnrollmentDAO.create(uid, cid, courseEnrollmentJson);

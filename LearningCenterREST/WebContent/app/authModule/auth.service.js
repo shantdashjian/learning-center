@@ -43,11 +43,38 @@ angular.module('authModule').factory('authService',
 					},
 					data : user
 				}).then(function(res) {
-					saveToken(res.data);
 					// enroll user in all courses
 					// POST /user/{uid}/courseEnrollment/{cid}
+					saveToken(res.data);
+					return $http({
+						method : 'GET',
+						url : 'api/course',			
+					})
+					.then(function(response){
+						var courseIds = response.data.map(course => course.id);
+						courseIds.forEach(function(courseId){
+							var courseEntrollmentJson = {
+								nextStepNo : 1,
+								progress : 0,
+							}
+							return $http({
+								method : 'POST',
+								url : 'api/user/' + service.getToken().id + '/courseEnrollment/' + courseId,
+								headers : {
+									'Content-Type' : 'application/json'
+								},
+								data : courseEntrollmentJson
+							})
+							.then(function(response){
+								return response;
+							});
+						})
+
+					})
+					.then(function(response){
+						return response;
+					});
 					
-					return res;
 				})
 
 			}
@@ -61,6 +88,7 @@ angular.module('authModule').factory('authService',
 			})
 
 			}
+			
 
 			return service;
 		})

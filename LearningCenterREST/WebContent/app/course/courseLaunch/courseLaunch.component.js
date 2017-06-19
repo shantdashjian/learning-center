@@ -11,6 +11,7 @@ angular.module('course')
 		vm.initialLoad = function(){
 			courseService.show($routeParams.id)
 			.then(function(response){
+				console.log(response.data);
 				vm.courseEnrollment = response.data;
 				vm.steps = vm.courseEnrollment.course.steps;
 				vm.reload();

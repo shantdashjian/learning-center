@@ -12,7 +12,7 @@
 				</thead>
 
 				<tbody>
-					<tr ng-repeat='courseEnrollment in vm.courseEnrollments'>
+					<tr ng-repeat="courseEnrollment in vm.courseEnrollments | orderBy: 'course.name'">
 						<td class="text-center vert-align">{{courseEnrollment.course.name}}</td>
 						<td class="text-center vert-align">{{courseEnrollment.dateStarted
 							| date: "MM-dd-yyyy"}}</td>
