@@ -77,7 +77,7 @@ http://shaundashjian.com:8080/LearningCenter
     
 ![alt text](spring-beans.png "Spring Beans")
     
-  9. After testing the various routes for the REST API using Postman, now it was time to hook the front-end AngularJS service with the back-end REST API. The AngularJS service now sends $http requests to the REST API and gets back promises that eventaully gets the data from the API. Those requests replaced the static mock data that I started with to develop the proof of concept and the core front-end design.
+  9. After testing the various routes for the REST API using Postman, now it was time to hook the front-end AngularJS service with the back-end REST API. The AngularJS service will now send $http requests to the REST API and get back promises that eventaully get the data from the API. Those requests replace the static mock data that I started with to develop the proof of concept and the core front-end design.
   
 ![alt text](ng-course-service.png "AngularJS service")
     
