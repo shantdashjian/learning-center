@@ -36,5 +36,20 @@ angular.module('course')
 		});
 	}
 	
+	service.update = function(courseEnrollment){
+//		if(todo.completed){
+//			todo.completedDate = $filter('date')(Date.now(), 'MM/dd/yyyy'); // 8/24/1999
+//		} else {
+//			todo.completedDate = "";
+//		}
+		return $http({
+			method : 'PUT',
+			url : BASE_URL + '1' + '/courseEnrollment/' + courseEnrollment.id,
+			headers : {
+				'Content-Type' : 'application/json'
+			},
+			data : courseEnrollment
+		});
+	}
 	return service;
 })

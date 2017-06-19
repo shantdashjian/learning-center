@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import entities.Course;
@@ -55,6 +56,7 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 	@Override
 	public CourseEnrollment update(int uid, int ceid, String courseEnrollmentJson) {
 		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		try {
 			CourseEnrollment courseEnrollment = mapper.readValue(courseEnrollmentJson, CourseEnrollment.class);
 			CourseEnrollment mappedCourseEnrollment = em.find(CourseEnrollment.class, ceid);

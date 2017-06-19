@@ -92,12 +92,12 @@ CREATE TABLE IF NOT EXISTS `learning_center`.`step` (
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
-GRANT USAGE ON *.* TO lc_user;
- DROP USER lc_user;
+GRANT USAGE ON *.* TO lc_user@localhost;
+ DROP USER lc_user@localhost;
 SET SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-CREATE USER 'lc_user' IDENTIFIED BY 'lc_user';
+CREATE USER 'lc_user'@'localhost' IDENTIFIED BY 'lc_user';
 
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `learning_center`.* TO 'lc_user';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `learning_center`.* TO 'lc_user'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

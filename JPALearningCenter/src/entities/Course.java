@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -26,8 +26,9 @@ public class Course {
 	
 	// mappings
 	@OneToMany(mappedBy = "course")
-	@JsonBackReference(value = "course-course-enrollment")
-	private Set<CourseEnrollment> courseEnrollment;
+//	@JsonBackReference(value = "course-course-enrollment")
+	@JsonIgnore
+	private Set<CourseEnrollment> courseEnrollments;
 	
 	@OneToMany(mappedBy = "course", fetch=FetchType.EAGER)
 	@JsonManagedReference(value = "course-step")
@@ -42,12 +43,12 @@ public class Course {
 		this.name = name;
 	}
 
-	public Set<CourseEnrollment> getCourseEnrollment() {
-		return courseEnrollment;
+	public Set<CourseEnrollment> getCourseEnrollments() {
+		return courseEnrollments;
 	}
 
-	public void setCourseEnrollment(Set<CourseEnrollment> courseEnrollment) {
-		this.courseEnrollment = courseEnrollment;
+	public void setCourseEnrollment(Set<CourseEnrollment> courseEnrollments) {
+		this.courseEnrollments = courseEnrollments;
 	}
 
 	public Set<Step> getSteps() {

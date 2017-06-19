@@ -54,6 +54,11 @@ angular.module('course')
 			} else {
 				vm.courseEnrollment.progress = vm.courseEnrollment.nextStepNo / vm.steps.length * 100;
 				vm.courseEnrollment.nextStepNo++;
+				courseService.update(vm.courseEnrollment)
+				.then(function(response){
+					vm.courseEnrollment = response.data;
+					console.log();
+				});
 			}
 		}
 	},

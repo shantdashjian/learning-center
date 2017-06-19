@@ -25,7 +25,7 @@ public class User {
 
 	// mappings
 	@OneToMany(mappedBy = "user")
-	@JsonManagedReference
+	@JsonManagedReference(value="user-course-enrollment")
 	private Set<CourseEnrollment> courseEnrollment;
 
 	// gets and sets
