@@ -13,19 +13,19 @@ angular.module('course')
 			.then(function(response){
 				vm.courseEnrollment = response.data;
 				vm.steps = vm.courseEnrollment.course.steps;
-				vm.currentStep = vm.steps.find(x => x.stepNo == vm.courseEnrollment.nextStepNo);
+				vm.reload();
 			});
 		}
 		
 		vm.initialLoad();
 		
-		vm.reload = function(){			
+		vm.reload = function(){		
 			vm.currentStep = vm.steps.find(x => x.stepNo == vm.courseEnrollment.nextStepNo);
 			vm.answered = false;
 			vm.showQuiz = false;
 			vm.tryAgain = false;
 			vm.answer = null;
-			vm.graduated = false;
+			vm.graduated = vm.courseEnrollment.progress == 100;
 		}
 		
 		vm.reload();
@@ -57,7 +57,6 @@ angular.module('course')
 				courseService.update(vm.courseEnrollment)
 				.then(function(response){
 					vm.courseEnrollment = response.data;
-					console.log();
 				});
 			}
 		}
