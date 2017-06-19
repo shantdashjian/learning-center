@@ -1,17 +1,26 @@
 angular.module('course')
 .component('courseLaunch',{
 	templateUrl : 'app/course/courseLaunch/courseLaunch.component.html',
-	controller : function($routeParams, courseLaunchService, courseService){
+	controller : function($routeParams, courseService){
 		var vm = this;
 		
 		vm.steps = [];
-		vm.steps = courseLaunchService.index($routeParams.id);
 		
-		vm.course = {};
-		vm.course = courseService.show($routeParams.id);
+		vm.courseEnrollment = {};
 	
+		vm.initialLoad = function(){
+			courseService.show($routeParams.id)
+			.then(function(response){
+				vm.courseEnrollment = response.data;
+				vm.steps = vm.courseEnrollment.course.steps;
+				vm.currentStep = vm.steps.find(x => x.stepNo == vm.courseEnrollment.nextStepNo);
+			});
+		}
+		
+		vm.initialLoad();
+		
 		vm.reload = function(){			
-			vm.currentStep = vm.steps.find(x => x.stepNo == vm.course.nextStepNo);
+			vm.currentStep = vm.steps.find(x => x.stepNo == vm.courseEnrollment.nextStepNo);
 			vm.answered = false;
 			vm.showQuiz = false;
 			vm.tryAgain = false;
@@ -32,7 +41,7 @@ angular.module('course')
 
 		vm.nextStep = function(){
 			vm.updateProgress();
-			if(vm.course.progress == 100){
+			if(vm.courseEnrollment.progress == 100){
 				vm.graduated = true;
 			} else {
 				vm.reload();
@@ -40,11 +49,11 @@ angular.module('course')
 		}
 		
 		vm.updateProgress = function(){
-			if(vm.course.progress === 100){
+			if(vm.courseEnrollment.progress === 100){
 				console.log('already 100%');
 			} else {
-				vm.course.progress = vm.course.nextStepNo / vm.steps.length * 100;
-				vm.course.nextStepNo++;
+				vm.courseEnrollment.progress = vm.courseEnrollment.nextStepNo / vm.steps.length * 100;
+				vm.courseEnrollment.nextStepNo++;
 			}
 		}
 	},

@@ -1,6 +1,8 @@
 angular.module('course')
-.factory('courseService', function(){
+.factory('courseService', function($http){
 	var service = {};
+	
+	var BASE_URL = 'api/user/';
 	
 	 var courses = [{
 		id : 1,
@@ -19,11 +21,19 @@ angular.module('course')
 	 
 	
 	service.index = function() {
-	  return courses;
+		return $http({
+			method : 'GET',
+			url : BASE_URL + '1' + '/courseEnrollment'
+			
+		});
 	};
 	
 	service.show = function(courseId){
-		return courses.find(x => x.id == courseId);
+		return $http({
+			method : 'GET',
+			url : BASE_URL + '1' + '/courseEnrollment/' + courseId
+			
+		});
 	}
 	
 	return service;

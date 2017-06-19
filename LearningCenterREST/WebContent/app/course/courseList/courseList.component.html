@@ -10,11 +10,11 @@
 				</thead>
 
 				<tbody>
-					<tr	ng-repeat='course in vm.courses'>
-						<td class="text-center vert-align">{{course.name}}</td>
-						<td class="text-center vert-align">{{course.dateStarted | date: "MM-dd-yyyy"}}</td>
-						<td class="text-center vert-align">{{course.progress}}%</td>
-						<td class="text-center vert-align"><button ng-click="vm.launch(course)">Launch Course</button></td>
+					<tr	ng-repeat='courseEnrollment in vm.courseEnrollments'>
+						<td class="text-center vert-align">{{courseEnrollment.course.name}}</td>
+						<td class="text-center vert-align">{{courseEnrollment.dateStarted | date: "MM-dd-yyyy"}}</td>
+						<td class="text-center vert-align">{{courseEnrollment.progress}}%</td>
+						<td class="text-center vert-align"><button ng-click="vm.launch(courseEnrollment)">Launch Course</button></td>
 					</tr>
 				</tbody>
 			</table>

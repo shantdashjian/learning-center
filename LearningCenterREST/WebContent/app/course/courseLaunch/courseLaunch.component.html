@@ -1,10 +1,10 @@
 <div class = "col-md-3 light-background centered">
- <h3>{{vm.course.name}}</h3>
+ <h3>{{vm.courseEnrollment.course.name}}</h3>
  <br>
  <p>
  	<round-progress
     max="100"
-    current="vm.course.progress"
+    current="vm.courseEnrollment.progress"
     color="#45ccce"
     bgcolor="#eaeaea"
     radius="100"
@@ -17,7 +17,7 @@
     animation="easeInOutQuart"
     animation-delay="0"></round-progress>
  </p>
- <p><strong>Progress: {{vm.course.progress | number:0}}%</strong></p>
+ <p><strong>Progress: {{vm.courseEnrollment.progress | number:0}}%</strong></p>
 </div>
 <div class = "col-md-8">
 	

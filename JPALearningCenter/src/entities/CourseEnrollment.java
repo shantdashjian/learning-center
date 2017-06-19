@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="course_enrollment")
@@ -38,9 +40,9 @@ public class CourseEnrollment {
 	@JsonBackReference(value="user-course-enrollment")
 	private User user;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="course_id")
-	@JsonBackReference(value="course-course-enrollment")
+	@JsonManagedReference(value="course-course-enrollment")
 	private Course course;
 
 	// gets and sets

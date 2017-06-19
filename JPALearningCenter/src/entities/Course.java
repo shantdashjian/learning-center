@@ -3,12 +3,14 @@ package entities;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -24,10 +26,10 @@ public class Course {
 	
 	// mappings
 	@OneToMany(mappedBy = "course")
-	@JsonManagedReference(value = "course-course-enrollment")
+	@JsonBackReference(value = "course-course-enrollment")
 	private Set<CourseEnrollment> courseEnrollment;
 	
-	@OneToMany(mappedBy = "course")
+	@OneToMany(mappedBy = "course", fetch=FetchType.EAGER)
 	@JsonManagedReference(value = "course-step")
 	private Set<Step> steps;
 

@@ -4,11 +4,18 @@ angular.module('course')
 	controller : function($location, courseService){
 		var vm = this;
 		
-		vm.courses = [];
-		vm.courses = courseService.index();
+		vm.courseEnrollments = [];
+		var reload = function(){
+			courseService.index()
+			.then(function(response){
+				vm.courseEnrollments = response.data;
+			});
+		}
 		
-		vm.launch = function(course){
-			$location.path('/course/'+course.id);
+		reload();
+		vm.launch = function(courseEnrollment){
+			
+			$location.path('/course/'+courseEnrollment.course.id);
 		}
 	},
 	controllerAs : 'vm'
