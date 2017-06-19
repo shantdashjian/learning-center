@@ -1,0 +1,20 @@
+
+<nav class='navbar navbar-inverse navbar-fixed-top'>
+	<div class='container'>
+		<ul class='nav navbar-nav navBarFont'>
+			<li ng-click="vm.markActive($event); vm.viewArchive()"
+				class="navbar-pointer"><a href="#/courses" id="navBarLogo">The Learning Center</a></li>
+			<li ng-click="vm.markActive($event)" class="navbar-pointer"><a
+				href="#/courses">courses</a></li>			
+				
+			</li>
+		</ul>
+		<div class="pull-right navBarFont">
+			<ul class="nav navbar-nav">
+				<li ng-click="vm.logout()" class="navbar-pointer"><a
+				href="#/">sign out</a></li>
+			</ul>
+		</div>
+	</div>
+
+</nav>

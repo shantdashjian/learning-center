@@ -9,7 +9,7 @@ angular.module("authModule").component("signup",{
 		body.css("background-size", "cover");
 		body.css("background-repeat", "no-repeat");
 		body.css("background-attachment", "fixed");
-		body.css("background-position", "0% 40%");
+//		body.css("background-position", "0% 40%");
 
 		
 		vm.signup = function(user) {

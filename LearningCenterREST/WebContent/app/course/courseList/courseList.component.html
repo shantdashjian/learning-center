@@ -1,3 +1,5 @@
+<navigation>Load nav</navigation>
+
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-12'>
@@ -5,16 +7,18 @@
 				<thead>
 					<th>Course</th>
 					<th width="12%">Date Started</th>
-					<th>Progress</th>						
-					<th >Action</th>
+					<th>Progress</th>
+					<th>Action</th>
 				</thead>
 
 				<tbody>
-					<tr	ng-repeat='courseEnrollment in vm.courseEnrollments'>
+					<tr ng-repeat='courseEnrollment in vm.courseEnrollments'>
 						<td class="text-center vert-align">{{courseEnrollment.course.name}}</td>
-						<td class="text-center vert-align">{{courseEnrollment.dateStarted | date: "MM-dd-yyyy"}}</td>
+						<td class="text-center vert-align">{{courseEnrollment.dateStarted
+							| date: "MM-dd-yyyy"}}</td>
 						<td class="text-center vert-align">{{courseEnrollment.progress}}%</td>
-						<td class="text-center vert-align"><button ng-click="vm.launch(courseEnrollment)">Launch Course</button></td>
+						<td class="text-center vert-align"><button
+								ng-click="vm.launch(courseEnrollment)">Launch Course</button></td>
 					</tr>
 				</tbody>
 			</table>
