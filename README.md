@@ -67,7 +67,7 @@ http://shaundashjian.com:8080/LearningCenter
     
 ![alt text](sql-hibernate.png "SQL by Hibernate")
     
-  7. After adding my JUnit tests in the JPA project and seeing all tests pass to make sure the connection and mapping works, I moved to the Spring REST side.
+  7. After adding my JUnit tests in the JPA project and seeing all tests pass to make sure both the connection and mapping work, I moved to the Spring REST side.
   
   8. I added a dao (Data Access Object) and controller. The dao takes care of communicating with the JPA entity, using JPQL (Java Persistence Query Language) to query and pass the Java objects. The controller takes care of routing the http requests to the dao. The dao dependency is injected into the controller as a bean. That bean is included in the Spring -servlet.xml file.
   
