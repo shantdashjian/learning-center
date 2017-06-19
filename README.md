@@ -45,7 +45,8 @@ http://shaundashjian.com:8080/LearningCenter
   * Purpose: This feature shows students what their progress is throuout the course
   
   * End-to-End Implementation How To:
-  1. I implemented this feature starting from the front-end. I spent some time thinking about how I want the progress feature to look like. I decided on a semi-circle progress bar to be displayed below the course name on the left side of the screen. This bar would change as the student progresses throughout the course. This was the design I had in mind:  
+  1. I implemented this feature starting from the front-end. I spent some time thinking about how I want the progress feature to look like. I decided on a semi-circle progress bar to be displayed below the course name on the left side of the screen. This bar would change as the student progresses throughout the course. This was the design I had in mind: 
+  
 ![alt text](ng-progress-bar.png "Semi-Circle Progress Bar")
     
   2. I searched and found various JS and AngularJS libraries for progress bars. I liked the Angular SVG round progressbar, by https://github.com/crisbeto/angular-svg-round-progressbar . I played with it to make sure it fits my purpose.
