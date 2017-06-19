@@ -61,7 +61,7 @@ http://shaundashjian.com:8080/LearningCenter
     
 ![alt text](table.png "Table")
     
-  6. To do CRUD, I added an entity in my JPA project which mapped the 'course_enrollment' table to the 'courseEnrollemnt' object. Hibernate works behind the scenes to build the SQL queries.
+  6. To do CRUD, I added an entity in my JPA project which mapped the 'course_enrollment' table to the 'courseEnrollment' object. Hibernate works behind the scenes to build the SQL queries.
   
 ![alt text](jpa-entity.png "JPA Entity")
     
