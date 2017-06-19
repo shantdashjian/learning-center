@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import entities.CourseEnrollment;
 
-public interface CourseEnrollmentControllerI {
+public interface EnrollmentControllerI {
+	
+	
+	
 //    GET /user/{uid}/courseEnrollment
     public Collection<CourseEnrollment> index(HttpServletRequest req, HttpServletResponse res, int uid);
     

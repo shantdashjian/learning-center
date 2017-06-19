@@ -4,7 +4,7 @@ import java.util.List;
 
 import entities.CourseEnrollment;
 
-public interface CourseEnrollmentDAO {
+public interface EnrollmentDAO {
   public List<CourseEnrollment> index(int uid);
   
   public CourseEnrollment show(int uid, int ceid);

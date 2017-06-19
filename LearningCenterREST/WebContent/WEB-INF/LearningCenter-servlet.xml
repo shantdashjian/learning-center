@@ -10,9 +10,9 @@
 
 	<context:component-scan base-package="controllers" />
 
-	<bean id="courseenrollmentdao" class="data.CourseEnrollmentDAOImpl" />
 	<bean id="authdao" class="data.AuthDAOImpl" />
 	<bean id="stepdao" class="data.StepDAOImpl" />
+	<bean id="enrollmentdao" class="data.EnrollmentDAOImpl" />
 
 
 	<!-- bcrypt bean -->

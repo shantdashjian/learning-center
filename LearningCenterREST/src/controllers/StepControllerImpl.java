@@ -21,6 +21,11 @@ public class StepControllerImpl implements StepControllerI {
 	@Autowired
 	private StepDAO stepDAO;
 	
+	// GET ping
+		@RequestMapping(path = "ping", method = RequestMethod.GET)
+		public String ping() {
+			return "pong";
+		}
 		
 	//  GET /course/{cid}/step
 	@Override

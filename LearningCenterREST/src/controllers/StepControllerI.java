@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import entities.Step;
 
 public interface StepControllerI {
+	
+	// GET ping
+		public String ping();
+		
 //  GET /course/{cid}/step
     public Collection<Step> index(HttpServletRequest req, HttpServletResponse res, int cid);
     

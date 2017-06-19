@@ -12,20 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import data.CourseEnrollmentDAO;
+import data.EnrollmentDAO;
 import entities.CourseEnrollment;
 
 @RestController
-public class CourseEnrollmentControllerImpl implements CourseEnrollmentControllerI {
+public class EnrollmentControllerImpl implements EnrollmentControllerI {
 
 	@Autowired
-	private CourseEnrollmentDAO courseEnrollmentDAO;
+	private EnrollmentDAO courseEnrollmentDAO;
 	
-	// GET ping
-	@RequestMapping(path = "ping", method = RequestMethod.GET)
-	public String ping() {
-		return "pong";
-	}
+	
 		
 	// GET /user/{uid}/courseEnrollment
 	@Override
