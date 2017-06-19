@@ -14,7 +14,6 @@ angular.module('course')
 		
 		reload();
 		vm.launch = function(courseEnrollment){
-			console.log(courseEnrollment);
 			$location.path('/course/'+courseEnrollment.id);
 		}
 	},

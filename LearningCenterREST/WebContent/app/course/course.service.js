@@ -13,7 +13,6 @@ angular.module('course')
 	};
 	
 	service.show = function(courseId){
-		console.log(authService.getToken().id);
 		return $http({
 			method : 'GET',
 			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseId
@@ -24,7 +23,6 @@ angular.module('course')
 
 	
 	service.update = function(courseEnrollment){
-		console.log(authService.getToken().id);
 		return $http({
 			method : 'PUT',
 			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseEnrollment.id,
