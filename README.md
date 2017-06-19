@@ -1,4 +1,4 @@
-# learning-center
+# Learning Center
 An AngularJS Spring REST API web application where students could take a course and track their progress towards completion
 
 ![alt text](login.png "Login")
@@ -42,7 +42,6 @@ http://shaundashjian.com:8080/LearningCenter
 ## Showing Progress: End-to-End Exploration:
   * Purpose: This feature shows students what their progress is throuout the course
   * End-to-End Implementation Path:
-    * 
     * Social aspects so that users could compare their stashes
     * Get data from other eCommerce sites
     * Develop the application as a smart phone app that uses RFID technology to scan item barcode and fill details automatically
