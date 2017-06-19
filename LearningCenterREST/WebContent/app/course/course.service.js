@@ -1,29 +1,13 @@
 angular.module('course')
-.factory('courseService', function($http){
+.factory('courseService', function($http, authService){
 	var service = {};
 	
-	var BASE_URL = 'api/user/';
-	
-	 var courses = [{
-		id : 1,
-		name : 'Real Estate Concepts: Part 1',
-		nextStepNo : 1,
-		progress : 0,
-		dateStarted : '06/18/2017'
-	}, {
-		id : 2,
-		name : 'Real Estate Concepts: Part 2',
-		nextStepNo : 1,
-		progress : 0,
-		dateStarted : '06/18/2017'
-	}
-	];
-	 
+	var BASE_URL = 'api/user/';	 
 	
 	service.index = function() {
 		return $http({
 			method : 'GET',
-			url : BASE_URL + '1' + '/courseEnrollment'
+			url : BASE_URL + authService.getToken().id + '/courseEnrollment'
 			
 		});
 	};
@@ -31,20 +15,29 @@ angular.module('course')
 	service.show = function(courseId){
 		return $http({
 			method : 'GET',
-			url : BASE_URL + '1' + '/courseEnrollment/' + courseId
+			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseId
 			
 		});
 	}
 	
+	service.enrollInAllCourses = function(){
+		// get all courses
+		// loop through them
+		// for each enroll the user
+		return $http({
+			method : 'POST',
+			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseEnrollment.id,
+			headers : {
+				'Content-Type' : 'application/json'
+			},
+			data : courseEnrollment
+		});
+	}
+	
 	service.update = function(courseEnrollment){
-//		if(todo.completed){
-//			todo.completedDate = $filter('date')(Date.now(), 'MM/dd/yyyy'); // 8/24/1999
-//		} else {
-//			todo.completedDate = "";
-//		}
 		return $http({
 			method : 'PUT',
-			url : BASE_URL + '1' + '/courseEnrollment/' + courseEnrollment.id,
+			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseEnrollment.id,
 			headers : {
 				'Content-Type' : 'application/json'
 			},

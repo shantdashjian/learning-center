@@ -13,6 +13,7 @@
 	<bean id="authdao" class="data.AuthDAOImpl" />
 	<bean id="stepdao" class="data.StepDAOImpl" />
 	<bean id="enrollmentdao" class="data.EnrollmentDAOImpl" />
+	<bean id="coursedao" class="data.CourseDAOImpl" />
 
 
 	<!-- bcrypt bean -->

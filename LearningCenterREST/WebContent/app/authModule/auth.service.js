@@ -44,6 +44,9 @@ angular.module('authModule').factory('authService',
 					data : user
 				}).then(function(res) {
 					saveToken(res.data);
+					// enroll user in all courses
+					// POST /user/{uid}/courseEnrollment/{cid}
+					
 					return res;
 				})
 
