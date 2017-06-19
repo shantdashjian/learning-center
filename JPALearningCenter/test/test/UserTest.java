@@ -54,7 +54,7 @@ public class UserTest {
 	public void test_course_enrollment_association() {
 	     user = entityManager.find(User.class, 1);
 	     int expectedOutcome = 2;
-	     assertEquals(expectedOutcome, user.getCourseEnrollment().size());
+	     assertEquals(expectedOutcome, user.getCourseEnrollments().size());
 	     
 	  }
 }

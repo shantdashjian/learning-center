@@ -108,7 +108,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `learning_center`;
-INSERT INTO `learning_center`.`user` (`id`, `email`, `password`) VALUES (1, 'student@theceshop.com', 'student');
+INSERT INTO `learning_center`.`user` (`id`, `email`, `password`) VALUES (1, 'student@theceshop.com', '$2a$10$8oZQ4rw5wmao07yXcjTTeevRBWBRCNiEyHY57oWBq53Wtjyz360S6');
 
 COMMIT;
 

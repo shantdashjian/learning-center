@@ -48,7 +48,7 @@ public class AuthDAOImpl implements AuthDAO {
 			e.printStackTrace();
 			String q = "SELECT u FROM User u WHERE u.email = :email";
 			managedUser = em.createQuery(q, User.class).setParameter("email", user.getEmail()).getSingleResult();
-			managedUser.setCourseEnrollment(new HashSet<CourseEnrollment>());
+			managedUser.setCourseEnrollments(new HashSet<CourseEnrollment>());
 			if (encoder.matches(user.getPassword(), managedUser.getPassword())) {
 				return managedUser;
 			} else {

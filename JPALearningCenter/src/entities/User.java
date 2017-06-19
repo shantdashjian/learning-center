@@ -26,7 +26,7 @@ public class User {
 	// mappings
 	@OneToMany(mappedBy = "user")
 	@JsonManagedReference(value="user-course-enrollment")
-	private Set<CourseEnrollment> courseEnrollment;
+	private Set<CourseEnrollment> courseEnrollments;
 
 	// gets and sets
 	public String getEmail() {
@@ -47,12 +47,12 @@ public class User {
 
 	
 
-	public Set<CourseEnrollment> getCourseEnrollment() {
-		return courseEnrollment;
+	public Set<CourseEnrollment> getCourseEnrollments() {
+		return courseEnrollments;
 	}
 
-	public void setCourseEnrollment(Set<CourseEnrollment> courseEnrollment) {
-		this.courseEnrollment = courseEnrollment;
+	public void setCourseEnrollments(Set<CourseEnrollment> courseEnrollments) {
+		this.courseEnrollments = courseEnrollments;
 	}
 
 	public int getId() {
