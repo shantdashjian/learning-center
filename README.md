@@ -34,6 +34,7 @@ http://shaundashjian.com:8080/LearningCenter
   * Java
   * HTML, CSS, Bootstrap, and JavaScript
   * JPA and Hibernate
+  * JPQL
   * MySQL
 
 ## Data Model
