@@ -24,7 +24,8 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 	
 	@Override
 	public List<CourseEnrollment> index(int uid) {
-		String query = "SELECT courseEnrollment from CourseEnrollment courseEnrollment where courseEnrollment.user.id = :id";
+		String query = "SELECT courseEnrollment from CourseEnrollment courseEnrollment "
+				+ "where courseEnrollment.user.id = :id";
 		return em.createQuery(query, CourseEnrollment.class).setParameter("id", uid).getResultList();
 	}
 
@@ -42,8 +43,6 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 			Course course = em.find(Course.class, cid);
 			mappedCourseEnrollment.setUser(user);
 			mappedCourseEnrollment.setCourse(course);
-			
-
 			em.persist(mappedCourseEnrollment);
 			em.flush();
 			return mappedCourseEnrollment;

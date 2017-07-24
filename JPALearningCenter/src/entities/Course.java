@@ -26,7 +26,6 @@ public class Course {
 	
 	// mappings
 	@OneToMany(mappedBy = "course")
-//	@JsonBackReference(value = "course-course-enrollment")
 	@JsonIgnore
 	private Set<CourseEnrollment> courseEnrollments;
 	

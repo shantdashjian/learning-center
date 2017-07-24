@@ -19,9 +19,7 @@ import entities.CourseEnrollment;
 public class EnrollmentControllerImpl implements EnrollmentControllerI {
 
 	@Autowired
-	private EnrollmentDAO courseEnrollmentDAO;
-	
-	
+	private EnrollmentDAO courseEnrollmentDAO;	
 		
 	// GET /user/{uid}/courseEnrollment
 	@Override
