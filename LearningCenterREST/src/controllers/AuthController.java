@@ -1,11 +1,9 @@
 package controllers;
 
 import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +23,6 @@ public class AuthController {
 	@RequestMapping(path = "/register", method = RequestMethod.POST)
 	public User register(HttpSession session, @RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) {
-		// TODO : Create the provided user, place the user in session, return
-		// the user
 		User returnedUser = authDAO.register(user);
 		session.setAttribute("user", returnedUser);
 		if (returnedUser == null) {
@@ -38,12 +34,9 @@ public class AuthController {
 	@RequestMapping(path = "/login", method = RequestMethod.POST)
 	public User login(HttpSession session, @RequestBody User user, HttpServletRequest request,
 			HttpServletResponse response) {
-		// TODO : Authenticate user object, place the user in session, return
-		// the user
 		User returnedUser = authDAO.login(user);
 		session.setAttribute("user", returnedUser);
 		if (returnedUser == null) {
-			// response.setStatus(401);
 			unauth(request, response);
 		}
 		return returnedUser;
@@ -64,8 +57,6 @@ public class AuthController {
 	public HashMap<String, String> unauth(HttpServletRequest request, HttpServletResponse response) {
 		response.setStatus(401);
 		HashMap<String, String> returned = new HashMap<String, String>();
-
-		/* Adding elements to HashMap */
 		returned.put("error", "Unauthorized");
 		return returned;
 	}

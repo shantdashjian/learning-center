@@ -9,6 +9,6 @@ import entities.Course;
 
 public interface CourseControllerI {	
 	
-//    GET /course
+	//  GET /course
     public Collection<Course> index(HttpServletRequest req, HttpServletResponse res);
 }
