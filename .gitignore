@@ -7,7 +7,7 @@ bin
 Servers
 .recommenders
 RemoteSystemsTempFiles
-learning_center.mwb
-learning_center.mwb.bak
-learning_center.sql
+*.mwb
+*.mwb.bak
+*.sql
 ngLearningCenter
