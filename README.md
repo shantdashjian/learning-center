@@ -1,7 +1,7 @@
 # Learning Center
 An AngularJS Spring REST API web application where students could take a course and track their progress towards completion
 
-![alt text](login.png "Login")
+![alt text](images/login.png "Login")
 
 ![alt text](enrollments.png "Course Enrollments")
 
