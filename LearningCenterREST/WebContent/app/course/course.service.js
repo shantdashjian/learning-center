@@ -8,7 +8,6 @@ angular.module('course')
 		return $http({
 			method : 'GET',
 			url : BASE_URL + authService.getToken().id + '/courseEnrollment'
-			
 		});
 	};
 	
@@ -16,11 +15,8 @@ angular.module('course')
 		return $http({
 			method : 'GET',
 			url : BASE_URL + authService.getToken().id + '/courseEnrollment/' + courseId
-			
 		});
 	}
-	
-
 	
 	service.update = function(courseEnrollment){
 		return $http({

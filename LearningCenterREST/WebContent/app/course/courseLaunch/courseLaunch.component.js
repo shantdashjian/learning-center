@@ -50,7 +50,6 @@ angular.module('course')
 		
 		vm.updateProgress = function(){
 			if(vm.courseEnrollment.progress === 100){
-				console.log('already 100%');
 			} else {
 				vm.courseEnrollment.progress = vm.courseEnrollment.nextStepNo / vm.steps.length * 100;
 				vm.courseEnrollment.nextStepNo++;
