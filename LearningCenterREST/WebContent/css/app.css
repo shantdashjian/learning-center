@@ -201,14 +201,12 @@ h1 {
 }
 
 header {
-	position: relative; /* child absolute */
+	position: relative;
 	margin: 0 -9999rem;
-	/* add back section padding value */
 	padding: .25rem 9999rem;
 	background: #666;
 	background: rgba(0, 0, 0, .8);
 	color: white;
-	/* font-size: 1.125rem; */
 	padding-top: 35px;
 	margin-top: -50px;
 }
@@ -331,7 +329,6 @@ form#loginBox {
 	font-family: 'Orbitron', sans-serif;
 	position: relative; /* child absolute */
 	margin: 0 -9999rem;
-	/* add back section padding value */
 	padding: .25rem 9999rem;
 	background: #666;
 	background: rgba(0, 0, 0, .5);
