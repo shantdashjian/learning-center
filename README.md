@@ -18,13 +18,13 @@ An AngularJS Spring REST API web application where students could take a course 
 http://shaundashjian.com:8080/LearningCenter
 
 ## How to Use the Application
-* Student logs in with his email and password
-* The landing page shows all the courses the student is currently enrolled in, each showing the progress as a percentage of completion 
-* Student could click on "Launch Course" to open the course page
-* In the course page, student learns by reading the material in each page and then taking a quiz to test his knowledge
-* The progress graph on the left shows how much has the student completed as a percentage of the overall content of the course
-* After answering each quiz correctly, the student could move to the next part in the course
-* After the student answers the last question in the course correctly, he graduates from the course
+1. Student logs in with his email and password
+2. The landing page shows all the courses the student is currently enrolled in, each showing the progress as a percentage of completion 
+3. Student could click on "Launch Course" to open the course page
+4. In the course page, student learns by reading the material in each page and then taking a quiz to test his knowledge
+5. The progress graph on the left shows how much has the student completed as a percentage of the overall content of the course
+6. After answering each quiz correctly, the student could move to the next part in the course
+7. After the student answers the last question in the course correctly, he graduates from the course
 
 ## Technologies Used
   * AngularJS
