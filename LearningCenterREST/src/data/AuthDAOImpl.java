@@ -1,13 +1,16 @@
 package data;
 
 import java.util.HashSet;
+import java.util.List;
+
+import javax.json.Json;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
+import entities.Course;
 import entities.CourseEnrollment;
 import entities.User;
 
@@ -21,12 +24,33 @@ public class AuthDAOImpl implements AuthDAO {
 	@Autowired
 	private PasswordEncoder encoder;
 
+	@Autowired
+	private CourseDAO courseDAO;
+	
+	@Autowired
+	private EnrollmentDAO courseEnrollmentDAO;	
+	
 	@Override
 	public User register(User user) {
 		String passwordSha = encoder.encode(user.getPassword());
 		user.setPassword(passwordSha);
 		em.persist(user);
 		em.flush();
+		// Enroll user in all courses
+		// 1. Get all course
+		List<Course> courses = courseDAO.index();
+		// 2. For each course enroll the user
+		courses.forEach((course) -> {
+			System.out.println(course);
+			String courseEnrollmentJson = Json.createObjectBuilder()
+					.add("nextStepNo", "1")
+					.add("progress", "0")
+					.build()
+					.toString();
+			System.out.println(courseEnrollmentJson);
+			courseEnrollmentDAO.create(user.getId(), course.getId(), courseEnrollmentJson);
+		});
+		
 		return user;
 	}
 

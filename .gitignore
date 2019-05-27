@@ -11,3 +11,19 @@ RemoteSystemsTempFiles
 *.mwb.bak
 *.sql
 ngLearningCenter
+
+# eclipse specific git ignore
+
+LearningCenterREST/.project
+LearningCenterREST/.metadata
+LearningCenterREST/bin/**
+LearningCenterREST/tmp/**
+LearningCenterREST/tmp/**/*
+LearningCenterREST/*.tmp
+LearningCenterREST/*.bak
+LearningCenterREST/*.swp
+LearningCenterREST/*~.nib
+LearningCenterREST/local.properties
+LearningCenterREST/.classpath
+LearningCenterREST/.settings
+LearningCenterREST/.loadpath
