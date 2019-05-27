@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
@@ -107,7 +106,4 @@ public class Step {
 		return "Step [id=" + id + ", stepNo=" + stepNo + ", title=" + title + ", description=" + description
 				+ ", imageUrl=" + imageUrl + ", question=" + question + ", answer=" + answer + "]";
 	}
-	
-	
-	
 }
