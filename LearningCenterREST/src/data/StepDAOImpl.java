@@ -1,10 +1,8 @@
 package data;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Step;
@@ -25,5 +23,4 @@ public class StepDAOImpl implements StepDAO {
 	public Step show(int cid, int sid) {
 		return em.find(Step.class, sid);
 	}
-
 }

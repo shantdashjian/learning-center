@@ -1,10 +1,8 @@
 package data;
 
 import java.util.HashSet;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
@@ -44,7 +42,6 @@ public class AuthDAOImpl implements AuthDAO {
 				return null;
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			String q = "SELECT u FROM User u WHERE u.email = :email";
 			managedUser = em.createQuery(q, User.class).setParameter("email", user.getEmail()).getSingleResult();
@@ -55,6 +52,5 @@ public class AuthDAOImpl implements AuthDAO {
 				return null;
 			}
 		}
-
 	}
 }

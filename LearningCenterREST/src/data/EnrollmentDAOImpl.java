@@ -1,13 +1,10 @@
 package data;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -79,5 +76,4 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 		}
 		return flag;
 	}
-
 }
