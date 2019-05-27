@@ -8,7 +8,6 @@ angular.module('nav').component('navigation', {
 			authService.logout().then(function(res) {
 				$location.path('/')
 			})
-
 		};
 	},
 
