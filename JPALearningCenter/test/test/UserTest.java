@@ -5,14 +5,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-
-//import java.util.ArrayList;
-//import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,9 +39,8 @@ public class UserTest {
 	    assertThat(user,
 	        allOf(
 	        	hasProperty("id", is(1)),	           
-	        	hasProperty("email", is("student@theceshop.com")),	           
-	        	hasProperty("password", is("student"))          
-	      )  
+	        	hasProperty("email", is("student"))
+	        )  
 	     );
 	}
 	
@@ -55,6 +49,5 @@ public class UserTest {
 	     user = entityManager.find(User.class, 1);
 	     int expectedOutcome = 2;
 	     assertEquals(expectedOutcome, user.getCourseEnrollments().size());
-	     
 	  }
 }

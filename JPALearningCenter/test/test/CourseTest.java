@@ -5,19 +5,14 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import entities.Course;
-import entities.CourseEnrollment;
 
 public class CourseTest {
 
@@ -37,7 +32,6 @@ public class CourseTest {
 		entityManagerFactory.close();
 	}
 	
-	@SuppressWarnings("unchecked")
 	@Test
 	public void test_course_mappings() {
 		course = entityManager.find(Course.class, 1);    
@@ -46,7 +40,7 @@ public class CourseTest {
 	        allOf(
 	        	hasProperty("id", is(1)),	           
 	        	hasProperty("name", is("Real Estate Concepts: Part 1"))    
-	      )  
+	        )  
 	     );
 	}
 	
@@ -55,7 +49,6 @@ public class CourseTest {
 	     course = entityManager.find(Course.class, 1);
 	     int expectedOutcome = 1;
 	     assertEquals(expectedOutcome, course.getCourseEnrollments().size());
-	     
 	  }
 	
 	@Test
@@ -63,9 +56,6 @@ public class CourseTest {
 	     course = entityManager.find(Course.class, 1);
 	     int expectedOutcome = 3;
 	     assertEquals(expectedOutcome, course.getSteps().size());
-	     
 	  }
-	
-	
 }
 
