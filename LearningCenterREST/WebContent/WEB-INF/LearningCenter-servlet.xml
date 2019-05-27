@@ -16,7 +16,6 @@
 	<bean id="enrollmentdao" class="data.EnrollmentDAOImpl" />
 	<bean id="coursedao" class="data.CourseDAOImpl" />
 
-
 	<!-- bcrypt bean -->
 	<bean id="bCryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
@@ -31,7 +30,4 @@
 	</bean>
 
 	<tx:annotation-driven transaction-manager="myTransactionManager" />
-
-
-
 </beans>
